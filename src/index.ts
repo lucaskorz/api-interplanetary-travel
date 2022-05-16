@@ -22,10 +22,11 @@ app.use(cors({
 }))
 
 // Rotas
-app.use('/api', itensRouter)
+app.use('/', itensRouter)
 
 // Resposta padrão para quaisquer outras requisições:
 app.use((req, res) => {
+    res.send('Rota desconhecida!')
     res.status(404)
 })
 
