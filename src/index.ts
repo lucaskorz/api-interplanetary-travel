@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import itensRouter from './routers/itens-router'
+import routerTravel from './routers/router-travel'
 
 // Porta do servidor
 const PORT = process.env.PORT || 4000
@@ -10,6 +10,10 @@ const HOSTNAME = process.env.HOSTNAME || 'http://localhost'
 
 // App Express
 const app = express()
+
+// JSON
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 // Endpoint raiz
 app.get('/', (req, res) => {
@@ -22,7 +26,7 @@ app.use(cors({
 }))
 
 // Rotas
-app.use('/', itensRouter)
+app.use('/', routerTravel)
 
 // Resposta padrão para quaisquer outras requisições:
 app.use((req, res) => {
