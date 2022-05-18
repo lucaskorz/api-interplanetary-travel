@@ -5,6 +5,7 @@ import  { Router } from 'express'
 let id: number = 0;
 const routerTravel = Router();
 
+// Rota Principal
 routerTravel.post('/viagem', (req, res) => {
     res.send('Cria nova Viagem')
 })
