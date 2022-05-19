@@ -1,7 +1,6 @@
-import { query } from "express"
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class CreateTravel1652835201093 implements MigrationInterface {
+export class CreateTravel1652922427271 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -10,7 +9,8 @@ export class CreateTravel1652835201093 implements MigrationInterface {
                 columns: [
                     {
                         name: "id",
-                        type: "uuid"
+                        type: "uuid",
+                        isPrimary: true
                     },
                     {
                         name: "pilotName",
@@ -45,5 +45,4 @@ export class CreateTravel1652835201093 implements MigrationInterface {
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('travels')
     }
-
 }

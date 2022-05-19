@@ -1,14 +1,18 @@
-[{
+{
   "name": "default",
   "type": "postgres",
   "host": "localhost",
-  "port": 5432,
+  "port": "5432",
   "username": "root",
   "password": "root",
-  "database": "pg",
-  "entities": ["./src/models/**/*.ts"],
-  "migrations": ["./src/db/migrations/*.ts"],
+  "database": "postgres",
+  "entities": [
+    "./src/entities/*.ts"
+  ],
+  "migrations": [
+    "./src/db/migrations/*.ts"
+  ],
   "cli": {
-    "migrationsDir": "./src/db/migrations/"
+    "migrationsDir": "./src/db/migrations"
   }
-}]
+}
