@@ -7,7 +7,7 @@
   "password": "root",
   "database": "postgres",
   "entities": [
-    "./src/entities/*.ts"
+    "./src/db/entities/*.ts"
   ],
   "migrations": [
     "./src/db/migrations/*.ts"
