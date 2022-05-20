@@ -1,22 +1,25 @@
 import { DataSource } from "typeorm"
 
-const AppDataSource = new DataSource({
+var path = require('path');
+
+const migrations = path.resolve(__dirname, '.', 'migrations', '*.ts')
+const entities = path.resolve(__dirname, '.', 'entities', '*.ts')
+
+export const AppDataSource = new DataSource({
     type: "postgres",
     host: "localhost",
     port: 5432,
     username: "root",
     password: "root",
     database: "postgres",
-    entities: ["./src/entities/*.ts"],
-    migrations: ["./src/db/migrations"]
+    entities: [entities],
+    migrations: [migrations]
 })
 
 AppDataSource.initialize()
     .then(() => {
-        console.log("Data Source has been initialized!")
+        console.log("Data source rodando liso")
     })
     .catch((err) => {
-        console.error("Error during Data Source initialization", err)
+        console.error("Erro ao inicializar data source", err)
     })
-
-export default AppDataSource

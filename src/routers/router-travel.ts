@@ -1,13 +1,16 @@
 import  { Router } from 'express'
-
-// importa os controllers aqui, e o controller irá chamar ao typeORM pra fazer a chamada no postgres
+import { CreateTravelController } from '../controllers/CreateTravelController'
 
 let id: number = 0;
 const routerTravel = Router();
 
 // Rota Principal
 routerTravel.post('/viagem', (req, res) => {
-    res.send('Cria nova Viagem')
+    const body = req.body;
+    
+    CreateTravelController(body);
+
+    res.send(res.json)
 })
 
 routerTravel.get('/viagens', (req, res) => {
