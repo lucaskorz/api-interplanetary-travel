@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     res.send(`Aplicação rodando na porta ${PORT}`)
 })
 
-// Cors
+// Cors; somente a URL informada pode acessar a API
 app.use(cors({
     origin: ['http://localhost:3000']
 }))
@@ -32,11 +32,10 @@ app.use('/', routerTravel)
 
 // Resposta padrão para quaisquer outras requisições:
 app.use((req, res) => {
-    res.send('Rota desconhecida!')
-    res.status(404)
+    res.send('Rota desconhecida!').status(404)
 })
 
 // Inicia o sevidor
 app.listen(PORT, () => {
-    console.log(`Servidor rodando com sucesso ${HOSTNAME}:${PORT}`)
+    console.log(`Servidor rodando! URL: ${HOSTNAME}:${PORT}`)
 })

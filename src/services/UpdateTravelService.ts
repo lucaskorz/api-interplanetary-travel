@@ -1,4 +1,4 @@
-import { Travel }  from '../db/entities/Travel'
+import { Travel }  from '../db/model/Travel'
 
 export async function UpdateTravelService(id) {
   const travel = new Travel();
