@@ -1,17 +1,10 @@
-import  { Router } from 'express'
+import { Router } from 'express'
 import { CreateTravelController } from '../controllers/CreateTravelController'
 
 let id: number = 0;
 const routerTravel = Router();
 
-// Rota Principal
-routerTravel.post('/viagem', (req, res) => {
-    const body = req.body;
-    
-    CreateTravelController(body);
-
-    res.send(res.json)
-})
+routerTravel.post('/viagem', CreateTravelController)
 
 routerTravel.get('/viagens', (req, res) => {
     res.send('Lê todas as viagens')

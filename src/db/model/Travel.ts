@@ -1,8 +1,8 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import { Entity, Column, PrimaryColumn } from "typeorm"
 
 @Entity()
 export class Travel {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn()
   id: string
 
   @Column()
@@ -19,10 +19,4 @@ export class Travel {
 
   @Column()
   originName: string
-
-  @CreateDateColumn()
-  createdAt: Date
-
-  @UpdateDateColumn()
-  updatedAt: Date
 }
