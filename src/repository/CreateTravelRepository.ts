@@ -2,7 +2,7 @@ import { Travel }  from '../db/model/Travel'
 import { AppDataSource } from '../db/dataSource';
 import { v4 as uuid } from 'uuid'
 
-export async function CreateTravelService(
+export async function CreateTravelRepository(
   pilotName: string, copilotName: string, originName: string,
   destinationName: string, starshipName: string
 ) {

@@ -1,4 +1,4 @@
-import { DeleteTravelService } from '../services/DeleteTravelService';
+import { DeleteTravelRepository } from '../repository/DeleteTravelRepository';
 import { Request, Response } from 'express';
 
 export async function DeleteTravelController(
@@ -7,7 +7,7 @@ export async function DeleteTravelController(
     
   const { id } = request.params;
 
-  await DeleteTravelService(id)
+  await DeleteTravelRepository(id)
 
   return response.status(204).send('ID '+id+' deletado com sucesso!')
 }

@@ -1,4 +1,4 @@
-import { CreateTravelService } from '../services/CreateTravelService'
+import { CreateTravelRepository } from '../repository/CreateTravelRepository'
 import { Request, Response } from 'express';
 
 export async function CreateTravelController(
@@ -7,7 +7,7 @@ export async function CreateTravelController(
     
   const { pilotName, copilotName, originName, destinationName, starshipName } = request.body;
 
-  const travel = await CreateTravelService(
+  const travel = await CreateTravelRepository(
     pilotName,
     copilotName,
     originName,

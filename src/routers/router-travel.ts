@@ -4,7 +4,7 @@ import { DeleteTravelController } from '../controllers/DeleteTravelController';
 import { GetAllTravelController } from '../controllers/GetAllTravelController';
 import { GetTravelByIdController } from '../controllers/GetTravelByIdController';
 import { UpdateTravelController } from '../controllers/UpdateTravelController';
-import { checksTravel } from '../middlewares/checksTravel'
+import { checksTravel } from '../middleware/checksTravel'
 
 const routerTravel = Router()
 

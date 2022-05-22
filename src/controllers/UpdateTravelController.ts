@@ -1,4 +1,4 @@
-import { UpdateTravelService } from '../services/UpdateTravelService';
+import { UpdateTravelRepository } from '../repository/UpdateTravelRepository';
 import { Request, Response } from 'express';
 
 export async function UpdateTravelController(
@@ -8,7 +8,7 @@ export async function UpdateTravelController(
   const { id } = request.params;
   const { pilotName, copilotName, originName, destinationName, starshipName } = request.body;
 
-  const travel = await UpdateTravelService(
+  const travel = await UpdateTravelRepository(
     id,
     pilotName,
     copilotName,

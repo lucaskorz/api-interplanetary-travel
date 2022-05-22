@@ -1,7 +1,7 @@
 import { Travel }  from '../db/model/Travel'
 import { AppDataSource } from '../db/dataSource';
 
-export async function UpdateTravelService(
+export async function UpdateTravelRepository(
   id: string,  pilotName: string, copilotName: string, originName: string,
   destinationName: string, starshipName: string
 ) {
