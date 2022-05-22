@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryColumn } from "typeorm"
 
-@Entity()
+@Entity('travel')
 export class Travel {
   @PrimaryColumn('uuid')
   id: string

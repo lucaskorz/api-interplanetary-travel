@@ -9,7 +9,7 @@ import { checksTravel } from '../middleware/checksTravel'
 const routerTravel = Router()
 
 routerTravel.post('/viagem', checksTravel, CreateTravelController)
-routerTravel.put('/viagem/:id', checksTravel, UpdateTravelController)
+routerTravel.put('/viagem/:id', UpdateTravelController)
 routerTravel.delete('/viagem/:id', DeleteTravelController)
 routerTravel.get('/viagem', GetAllTravelController)
 routerTravel.get('/viagem/:id', GetTravelByIdController)

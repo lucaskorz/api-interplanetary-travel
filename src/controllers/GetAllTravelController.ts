@@ -1,10 +1,10 @@
-import { GetAllTravelRepository } from '../repository/GetAllTravelRepository'; 
+import { GetAllTravelService } from '../service/GetAllTravelService'; 
 import { Request, Response } from 'express';
 
 export async function GetAllTravelController(
     request: Request, response: Response
   ): Promise<Response> {
-  const travels = await GetAllTravelRepository()
+  const travels = await GetAllTravelService()
 
   return response.status(200).json(travels)
 }

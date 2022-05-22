@@ -24,8 +24,8 @@ export async function checksTravel(request, response, next) {
   }
 
   await fetch(url+'people')
-  .then((resp) => resp.json())
-  .then(function(data: any) {
+        .then((resp) => resp.json())
+        .then(function(data: any) {
     let peoples = data.results
     pilot = peoples.find((people) => people.name === pilotName)
     copilot = peoples.find((people) => people.name === copilotName)
@@ -40,8 +40,8 @@ export async function checksTravel(request, response, next) {
     return response.status(400).json(({ error: "O piloto informado não existe!" }))
   } else {
     await fetch(url+'people/'+droidPilot)
-    .then((resp) => resp.json())
-    .then(function(data: any) { 
+          .then((resp) => resp.json())
+          .then(function(data: any) { 
       if (data.species[0] === 'https://swapi.dev/api/species/2/') {
         pilotoDroid = true;
       }else{
@@ -56,8 +56,8 @@ export async function checksTravel(request, response, next) {
     return response.status(400).json(({ error: "O copiloto informado não existe!" }))
   } else {
     await fetch(url+'people/'+droidCoPilot)
-    .then((resp) => resp.json())
-    .then(function(data: any) { 
+          .then((resp) => resp.json())
+          .then(function(data: any) { 
       if (data.species[0] === 'https://swapi.dev/api/species/2/') {
         copilotDroid = true;
       }else{
@@ -69,8 +69,8 @@ export async function checksTravel(request, response, next) {
   }
 
   await fetch(url+'planets')
-  .then((resp) => resp.json())
-  .then(function(data: any) {
+        .then((resp) => resp.json())
+        .then(function(data: any) {
     let planets = data.results
     planetOrig = planets.find((planet) => planet.name === originName)
     planetDest = planets.find((planet) => planet.name === destinationName)
@@ -87,8 +87,8 @@ export async function checksTravel(request, response, next) {
   }
 
   await fetch(url+'starships')
-  .then((resp) => resp.json())
-  .then(function(data: any) {
+        .then((resp) => resp.json())
+        .then(function(data: any) {
     let starships = data.results
     starship = starships.find((starship) => starship.name === starshipName)
   }).catch(function(err) {

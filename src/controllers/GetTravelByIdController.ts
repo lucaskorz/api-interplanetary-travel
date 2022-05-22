@@ -1,4 +1,4 @@
-import { GetTravelByIdRepository } from '../repository/GetTravelByIdRepository'; 
+import { GetTravelByIdService } from '../service/GetTravelByIdService'; 
 import { Request, Response } from 'express';
 
 export async function GetTravelByIdController(
@@ -7,7 +7,7 @@ export async function GetTravelByIdController(
     
   const { id } = request.params;
 
-  const travel = await GetTravelByIdRepository(id)
+  const travel = await GetTravelByIdService(id)
 
   return response.status(200).json(travel)
 }

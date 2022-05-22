@@ -1,7 +1,7 @@
 import { AppDataSource } from '../db/dataSource';
 import { Travel } from '../db/model/Travel';
 
-export async function GetAllTravelRepository() {
+export async function GetAllTravelService() {
   try {
     return await AppDataSource.manager.createQueryBuilder()
       .select()
