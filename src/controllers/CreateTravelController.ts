@@ -1,13 +1,13 @@
 import { CreateTravelService } from '../services/CreateTravelService'
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 
 export async function CreateTravelController(
-    request: Request, response: Response, next: NextFunction
+    request: Request, response: Response
   ): Promise<Response> {
     
   const { pilotName, copilotName, originName, destinationName, starshipName } = request.body;
 
-  await CreateTravelService(
+  const travel = await CreateTravelService(
     pilotName,
     copilotName,
     originName,
@@ -15,5 +15,5 @@ export async function CreateTravelController(
     starshipName
   )
 
-  return response.send('Viagem criada com sucesso!')
+  return response.status(201).json({travel} )
 }

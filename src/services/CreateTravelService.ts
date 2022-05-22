@@ -6,14 +6,19 @@ export async function CreateTravelService(
   pilotName: string, copilotName: string, originName: string,
   destinationName: string, starshipName: string
 ) {
-  const travel = new Travel();
-  travel.id = uuid()
-  travel.pilotName       = pilotName;
-  travel.copilotName     = copilotName;
-  travel.originName      = originName;
-  travel.destinationName = destinationName;
-  travel.starshipName    = starshipName;
-  await AppDataSource.manager.save(travel);
+  try {
+    const travel = new Travel();
+    travel.id = uuid()
+    travel.pilotName       = pilotName;
+    travel.copilotName     = copilotName;
+    travel.originName      = originName;
+    travel.destinationName = destinationName;
+    travel.starshipName    = starshipName;
 
-  console.log('Criado nova viagem com o id ', travel.id)
+    console.log('Criado nova viagem com o id ', travel.id)
+    return await AppDataSource.manager.save(travel);
+  }catch(err) {
+    console.log('Erro ao tentar cadastrar nova viagem: ',err.message)
+    return err.message;
+  }
 }

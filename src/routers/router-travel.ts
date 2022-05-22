@@ -1,28 +1,17 @@
 import { Router } from 'express'
 import { CreateTravelController } from '../controllers/CreateTravelController'
+import { DeleteTravelController } from '../controllers/DeleteTravelController';
+import { GetAllTravelController } from '../controllers/GetAllTravelController';
+import { GetTravelByIdController } from '../controllers/GetTravelByIdController';
+import { UpdateTravelController } from '../controllers/UpdateTravelController';
+import { checksTravel } from '../middlewares/checksTravel'
 
-let id: number = 0;
-const routerTravel = Router();
+const routerTravel = Router()
 
-routerTravel.post('/viagem', CreateTravelController)
-
-routerTravel.get('/viagens', (req, res) => {
-    res.send('Lê todas as viagens')
-})
-
-routerTravel.get('/viagem/:id', (req, res) => {
-    id = +req.params.id
-    res.send(`Lê apenas o id ${id}`)
-})
-
-routerTravel.put('/viagem/:id', (req, res) => {
-    id = +req.params.id
-    res.send(`Atualiza apenas o id ${id}`)
-})
-
-routerTravel.delete('/viagem/:id', (req, res) => {
-    id = +req.params.id
-    res.send(`Deleta apenas o id ${id}`)
-})
+routerTravel.post('/viagem', checksTravel, CreateTravelController)
+routerTravel.put('/viagem/:id', checksTravel, UpdateTravelController)
+routerTravel.delete('/viagem/:id', DeleteTravelController)
+routerTravel.get('/viagem', GetAllTravelController)
+routerTravel.get('/viagem/:id', GetTravelByIdController)
 
 export default routerTravel
