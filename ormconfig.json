@@ -14,5 +14,11 @@
   ],
   "cli": {
     "migrationsDir": "./src/db/migrations"
+  },
+  "ssl": true, 
+  "extra": { 
+    "ssl": { 
+      "rejectUnauthorized": false 
+    }
   }
 }
