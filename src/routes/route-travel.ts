@@ -9,12 +9,14 @@ import fetch from 'node-fetch';
 
 const routerTravel = Router()
 
+// Rotas pra manutenção, criação e consulta de viagens
 routerTravel.post('/viagem', checksTravel, CreateTravelController)
 routerTravel.put('/viagem/:id', UpdateTravelController)
 routerTravel.delete('/viagem/:id', DeleteTravelController)
 routerTravel.get('/viagem', GetAllTravelController)
 routerTravel.get('/viagem/:id', GetTravelByIdController)
 
+// Rotas pra consulta de personagens, naves, planetas e espécies
 const url: string = 'https://swapi.dev/api/'
 routerTravel.get('/personagens', async (req, res) => {
   await fetch(url+'people')
