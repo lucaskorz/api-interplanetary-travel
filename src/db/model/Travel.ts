@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryColumn } from "typeorm"
 
 @Entity()
 export class Travel {
-  @PrimaryColumn()
+  @PrimaryColumn('uuid')
   id: string
 
   @Column()

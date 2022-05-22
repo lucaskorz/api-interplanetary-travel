@@ -9,5 +9,5 @@ export async function DeleteTravelController(
 
   await DeleteTravelRepository(id)
 
-  return response.status(204).send('ID '+id+' deletado com sucesso!')
+  return response.status(201).json({ delete: 'Viagem deletada com sucesso!' })
 }

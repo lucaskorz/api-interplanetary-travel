@@ -13,5 +13,5 @@ export async function UpdateTravelRepository(
   travel.starshipName    = starshipName;
 
   console.log('Atualizado viagem com o id ', travel.id)
-  //return await AppDataSource.manager.update(id);
+  return await AppDataSource.manager.query('update travel set ')
 }

@@ -1,9 +1,9 @@
-import { Travel }  from '../db/model/Travel'
 import { AppDataSource } from '../db/dataSource';
+import { Travel } from '../db/model/Travel';
 
 export async function DeleteTravelRepository(id) {
-  const travel = new Travel();
-
   console.log('Deletado viagem com o id ', id)
-  //return await AppDataSource.manager.delete(travel.id);
+  return await AppDataSource.manager.createQueryBuilder()
+      .delete().from(Travel).where("id = :id", { id: id })
+      .execute();
 }

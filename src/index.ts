@@ -24,7 +24,7 @@ app.use(cors({
 app.use('/', routerTravel)
 
 app.use((req, res) => {
-    res.send('Rota desconhecida!').status(404)
+    res.status(404).json({ error: 'Rota não encontrada!' })
 })
 
 app.listen(PORT, () => {

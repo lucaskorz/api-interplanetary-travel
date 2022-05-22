@@ -1,9 +1,9 @@
 import { Router } from 'express'
 import { CreateTravelController } from '../controllers/CreateTravelController'
-import { DeleteTravelController } from '../controllers/DeleteTravelController';
-import { GetAllTravelController } from '../controllers/GetAllTravelController';
-import { GetTravelByIdController } from '../controllers/GetTravelByIdController';
-import { UpdateTravelController } from '../controllers/UpdateTravelController';
+import { DeleteTravelController } from '../controllers/DeleteTravelController'
+import { GetAllTravelController } from '../controllers/GetAllTravelController'
+import { GetTravelByIdController } from '../controllers/GetTravelByIdController'
+import { UpdateTravelController } from '../controllers/UpdateTravelController'
 import { checksTravel } from '../middleware/checksTravel'
 
 const routerTravel = Router()

@@ -6,5 +6,5 @@ export async function GetAllTravelController(
   ): Promise<Response> {
   const travels = await GetAllTravelRepository()
 
-  return response.status(200).json({ travels })
+  return response.status(200).json(travels)
 }

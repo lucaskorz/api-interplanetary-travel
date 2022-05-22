@@ -15,5 +15,5 @@ export async function CreateTravelController(
     starshipName
   )
 
-  return response.status(201).json({travel} )
+  return response.status(201).json(travel)
 }

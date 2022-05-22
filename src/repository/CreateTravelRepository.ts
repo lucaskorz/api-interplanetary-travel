@@ -18,7 +18,6 @@ export async function CreateTravelRepository(
     console.log('Criado nova viagem com o id ', travel.id)
     return await AppDataSource.manager.save(travel);
   }catch(err) {
-    console.log('Erro ao tentar cadastrar nova viagem: ',err.message)
-    return err.message;
+    return { error: 'Erro ao tentar cadastrar nova viagem: '+err.message }
   }
 }

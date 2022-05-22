@@ -9,5 +9,5 @@ export async function GetTravelByIdController(
 
   const travel = await GetTravelByIdRepository(id)
 
-  return response.status(204).json({ travel })
+  return response.status(200).json(travel)
 }
