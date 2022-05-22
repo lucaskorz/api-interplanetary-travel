@@ -1,7 +1,6 @@
 import { DataSource } from "typeorm"
 
 var path = require('path');
-
 const migrations = path.resolve(__dirname, '.', 'migrations', '*.ts')
 const model = path.resolve(__dirname, '.', 'model', '*.ts')
 
