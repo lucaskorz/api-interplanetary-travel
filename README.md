@@ -8,6 +8,7 @@ o controller chama o service e o service (TypeORM) faz o procedimento no banco d
 
 Temos também versionamento do banco de dados utilizando as migrations do TypeORM, rodando as migrations o 
 banco de dados se mantém atualizado.
+E também possui alguns testes básicos com JEST testando post, put e delete de viagens.
 
 Comando pra rodar as migrations: yarn typeorm -- migration:run -d src/db/dataSource.ts
 
@@ -30,7 +31,10 @@ GET - /viagens/:id - consulta uma viagem específica
 ##### Rotas da API pública:
 
 /personagens
+
 /especies
+
 /naves
+
 /planetas
 
