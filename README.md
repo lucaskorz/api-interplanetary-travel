@@ -24,9 +24,13 @@ Exemplo de body no formato JSON:
 }
 
 PUT - /viagens/:id - Atualiza uma viagem
+
 DELETE - /viagens/:id - Deleta uma viagem
+
 GET - /viagens - consulta todas as viagens cadastradas
+
 GET - /viagens/:id - consulta uma viagem específica
+
 
 ##### Rotas da API pública:
 
